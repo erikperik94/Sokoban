@@ -69,7 +69,7 @@ var tileMap01 = {
       }
   }
   
-  //
+  //Choosen from makeBoard creates the element box
   function makeBoxOnBoard(elementColor, elementCoordinate) {
     var newBox = document.createElement("div");
     newBox.id = elementCoordinate;
@@ -95,7 +95,7 @@ var tileMap01 = {
   function moveDown(){
     move(0, 0, 1, 2);
   }
-  
+  //Remember offset and last move, so it can calculate this move
   function move(offset_1, offset_2, offset_3, offset_4){
     var x_1 = 0;
     var x_2 = 0;
@@ -118,8 +118,8 @@ var tileMap01 = {
     y_1 = Number(playerIdArray[1]) + offset_3;
     y_2 = Number(playerIdArray[1]) + offset_4;
    
-    firstElementId = x_1 + "," + y_1;    // reconstruct firstElement coordinate/id
-    secondElementId = x_2 + "," + y_2;   // reconstruct secondElement coordinate/id
+    firstElementId = x_1 + "," + y_1;
+    secondElementId = x_2 + "," + y_2;
     firstElement = document.getElementById(firstElementId);
     secondElement = document.getElementById(secondElementId);
     
@@ -140,7 +140,7 @@ var tileMap01 = {
     getPlayerAndGreenArea();
     checkScore();
   }
-  
+  //Fixes finish Area and player
   function getPlayerAndGreenArea(){
     for (let i = 0; i < finalPointArray.length; i++) {
       if(document.getElementById(finalPointArray[i]).style.backgroundColor !== "darkred"){
@@ -149,7 +149,7 @@ var tileMap01 = {
     }
     document.getElementById(playerId).style.backgroundColor = "orange";
   }
-  
+  //Game finsihed?
   function checkScore(){
     var totalPoint = 0;
     for (let i = 0; i < finalPointArray.length; i++) {
@@ -162,7 +162,7 @@ var tileMap01 = {
       alert("Congratulations! You won!");
     }
   }
-  
+  //If keyboard arrow were hit
   function PlayerInput(event){
      if(event.keyCode === 37){
       moveLeft();
@@ -177,6 +177,6 @@ var tileMap01 = {
       moveDown();
      }
     }
-  
+    
   document.getElementsByTagName("body")[0].style.backgroundColor = "orange";
   makeBoard();
