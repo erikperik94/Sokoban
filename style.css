@@ -1,0 +1,66 @@
+#board {
+    height: 640px;
+    width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .box {
+    height: 40px;
+    width: 40px;
+    float: left;
+  }
+  
+  .centerThis {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .center {
+    text-align: center;
+  }
+  
+  .controlContainer {
+    display: grid;
+    grid-gap: 4px;
+    height: 150px;
+    width: 760px;
+    background-color: lightgray;
+    grid-template-columns: repeat(20, [col] auto) ;
+    grid-template-rows: repeat(5, [row] auto);  
+  }
+  
+  .moveUp{
+    grid-column: col 10 / span 2;
+    grid-row: row 2;
+  }
+  
+  .moveDown {
+    grid-column: col 10 / span 2;
+    grid-row: row 4;
+  }
+  
+  .moveRight {
+    grid-column: col 12 / span 2;
+    grid-row: row 3;
+  }
+  
+  .moveLeft {
+    grid-column: col 8 / span 2;
+    grid-row: row 3;
+  }
+  
+  .reportDiv {
+    grid-column: col 1 / span 20;
+    grid-row: row 1;
+  }
+  
+  .button {
+    background-color: orange;
+    border-radius: 50%;
+  }
+  
+  .relativePosition {
+    position: relative;
+    top:95px;
+  }
