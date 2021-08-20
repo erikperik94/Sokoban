@@ -165,16 +165,20 @@ var tileMap01 = {
   //If keyboard arrow were hit
   function PlayerInput(event){
      if(event.keyCode === 37){
-      moveLeft();
+         event.preventDefault();
+         moveLeft();
      }
      else if(event.keyCode === 38){
-      moveUp();
+         event.preventDefault();
+         moveUp();
      }
      else if(event.keyCode === 39){
-      moveRight();
+         event.preventDefault();
+         moveRight();
      }
      else if(event.keyCode === 40){
-      moveDown();
+         event.preventDefault();
+         moveDown();
      }
     }
     
